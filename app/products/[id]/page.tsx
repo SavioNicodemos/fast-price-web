@@ -13,11 +13,75 @@ type Props = {
 }
 
 const ProductDetails = async ({ params: { id } }: Props) => {
-  const product: Product = await getProductById(id);
+  // const product: Product = await getProductById(id);
+  const product = {
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80',
+    title: 'Product Title',
+    url: 'https://google.com',
+    reviewsCount: 25,
+    currency: '$',
+    currentPrice: 100,
+    originalPrice: 200,
+    stars: 4.5,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aut amet reiciendis distinctio beatae recusandae non optio labore possimus architecto itaque, velit ab deserunt cupiditate voluptas. Animi ad officia iusto.',
+    averagePrice: 100,
+    highestPrice: 200,
+    lowestPrice: 50,
+  };
 
   if (!product) redirect('/');
 
-  const similarProducts = await getSimilarProducts(id);
+  // const similarProducts = await getSimilarProducts(id);
+  const similarProducts = [
+    {
+      _id: '1',
+      image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      title: 'Product Title',
+      url: 'https://google.com',
+      reviewsCount: 25,
+      currency: '$',
+      currentPrice: 100,
+      originalPrice: 200,
+      stars: 4,
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aut amet reiciendis distinctio beatae recusandae non optio labore possimus architecto itaque, velit ab deserunt cupiditate voluptas. Animi ad officia iusto.',
+      averagePrice: 100,
+      highestPrice: 200,
+      lowestPrice: 50,
+      priceHistory: [
+        { price: 100 },
+        { price: 200 },
+        { price: 300 },
+        { price: 400 },
+      ],
+      discountRate: 50,
+      category: 'Electronics',
+      isOutOfStock: false,
+    },
+    {
+      _id: '2',
+      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      title: 'Product Title',
+      url: 'https://google.com',
+      reviewsCount: 25,
+      currency: '$',
+      currentPrice: 100,
+      originalPrice: 200,
+      stars: 4,
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aut amet reiciendis distinctio beatae recusandae non optio labore possimus architecto itaque, velit ab deserunt cupiditate voluptas. Animi ad officia iusto.',
+      averagePrice: 100,
+      highestPrice: 200,
+      lowestPrice: 50,
+      priceHistory: [
+        { price: 100 },
+        { price: 200 },
+        { price: 300 },
+        { price: 400 },
+      ],
+      discountRate: 50,
+      category: 'Electronics',
+      isOutOfStock: false,
+    },
+  ];
 
   return (
     <div className="product-container">
